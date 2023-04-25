@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Motivational Quotes</title>
+	<style>
+		body {
+			background-color: #F1F1F1;
+			font-family: Arial, sans-serif;
+		}
+		header {
+			background-color: #FFF;
+			padding: 20px;
+			box-shadow: 0 0 10px #CCC;
+			display: flex;
+			justify-content: center;
+		}
+		header img {
+			height: 80px;
+		}
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			color: #333;
+			text-align: center;
+			margin-top: 50px;
+		}
+		form {
+			width: 700px;
+			margin: 50px auto;
+			background-color: #FFF;
+			border-radius: 5px;
+			padding: 50px;
+			box-shadow: 0 0 15px #CCC;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		input[type="submit"] {
+			background-color: #333;
+			color: #FFF;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+			transition: all 0.3s ease-in;
+			margin-top: 20px;
+			align-self: flex-end;
+		}
+		input[type="submit"]:hover {
+			background-color: #666;
+			transition: all 0.3s ease-in;
+		}
+		blockquote {
+			font-size: 24px;
+			font-style: italic;
+			color: #333;
+			text-align: center;
+			margin-top: 50px;
+			max-width: 600px;
+			line-height: 1.5;
+			padding: 20px;
+			box-shadow: 0 0 10px #CCC;
+			background-color: #FFF;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img src="https://tristarpt.com/wp-content/uploads/sites/3/2022/04/cropped-tristar-physical-therapy-favicon.png" alt="Logo">
+	</header>
+	<h1>Motivational Quotes</h1>
+	<form>
+		<input type="submit" value="Get Quote">
+	</form>
+	<blockquote></blockquote>
+	<script>
+		const form = document.querySelector('form');
+		const blockQuote = document.querySelector('blockquote');
+
+		const quotes = [
+			"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+			"The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.",
+			"Success is not final, failure is not fatal: it is the courage to continue that counts.",
+			"Believe you can and you're halfway there.",
+			"Don't watch the clock; do what it does. Keep going.",
+			"Good things happen to those who hustle.",
+			"Hard work beats talent when talent doesn't work hard.",
+			"I can't change the direction of the wind, but I can adjust my sails to always reach my destination.",
+			"The future belongs to those who believe in the beauty of their dreams.",
+			"Either you run the day, or the day runs you.",
+			"Whoever is happy will make others happy too.",
+			"Success is not how high you have climbed, but how you make a positive difference to the world."
+		];
+
+		form.addEventListener('submit', (event) => {
+			const quoteIndex = Math.floor(Math.random() * quotes.length);
+			blockQuote.textContent = quotes[quoteIndex];
+			event.preventDefault();
+		});
+	</script>
+</body>
+</html>
