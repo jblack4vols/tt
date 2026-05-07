@@ -1,0 +1,15 @@
+{
+  "name": "billing-audit",
+  "version": "0.1.0",
+  "description": "Pre-submission claim audit: 8-minute rule, plan-of-care signatures, modifier 59, denial reconciliation.",
+  "author": "[Company Name] Engineering",
+  "commands": [
+    "commands/check-8-minute-rule.md",
+    "commands/flag-missing-pocsign.md"
+  ],
+  "skills": ["skills/billing-rules"],
+  "permissions": {
+    "bash": ["python scripts/*"],
+    "network": ["api.[your-emr-vendor].com"]
+  }
+}

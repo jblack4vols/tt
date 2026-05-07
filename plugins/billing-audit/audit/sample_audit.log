@@ -1,0 +1,6 @@
+2026-05-04T07:01:12Z actor=billing-bot@company.com action=billing-audit-fetch status=ok label=BATCH-2026-W18-001 claim_count=842 include=poc_signatures
+2026-05-04T07:01:18Z actor=billing-bot@company.com action=billing-audit-8min status=ok batch=BATCH-2026-W18-001 audited=842 flags=11 warn=8 block=3
+2026-05-04T07:01:18Z actor=billing-bot@company.com action=billing-audit-8min-flag batch=BATCH-2026-W18-001 claim_id=CLM-104822 severity=warn delta=1
+2026-05-04T07:01:18Z actor=billing-bot@company.com action=billing-audit-8min-flag batch=BATCH-2026-W18-001 claim_id=CLM-104867 severity=block delta=2
+2026-05-04T07:01:24Z actor=billing-bot@company.com action=billing-audit-pocsign status=ok batch=BATCH-2026-W18-001 audited=842 flags=4 warn=3 block=1
+2026-05-04T07:01:24Z actor=billing-bot@company.com action=billing-audit-pocsign-flag batch=BATCH-2026-W18-001 claim_id=CLM-104901 severity=block reason="unsigned past 30 days"

@@ -15,6 +15,15 @@
       "category": "operations",
       "tags": ["kpi", "reporting", "weekly-rollup"],
       "owners": ["@[engineering-lead]", "@[privacy-officer]"]
+    },
+    {
+      "name": "billing-audit",
+      "source": "./plugins/billing-audit",
+      "description": "Pre-submission claim audit: 8-minute rule, plan-of-care signatures, modifier 59 (planned), denial reconciliation (planned). PHI-adjacent — requires Anthropic BAA.",
+      "version": "0.1.0",
+      "category": "billing",
+      "tags": ["billing", "compliance", "8-minute-rule", "phi-adjacent"],
+      "owners": ["@[engineering-lead]", "@[privacy-officer]", "@[security-officer]"]
     }
   ]
 }
