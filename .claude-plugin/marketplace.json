@@ -1,0 +1,20 @@
+{
+  "name": "[company-name]-internal",
+  "owner": {
+    "name": "[Company Name] Engineering",
+    "email": "[engineering@company.com]"
+  },
+  "description": "Internal Claude Code plugins for [Company Name] outpatient PT operations. Restricted to workforce members; not published publicly.",
+  "version": "0.1.0",
+  "plugins": [
+    {
+      "name": "clinic-ops",
+      "source": "./plugins/clinic-ops",
+      "description": "Operational KPI rollups across all 8 clinics. Aggregate counts only — no patient-level data.",
+      "version": "0.1.0",
+      "category": "operations",
+      "tags": ["kpi", "reporting", "weekly-rollup"],
+      "owners": ["@[engineering-lead]", "@[privacy-officer]"]
+    }
+  ]
+}
