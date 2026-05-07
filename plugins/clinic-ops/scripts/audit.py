@@ -13,12 +13,17 @@ user.email`, then "unknown".
 from __future__ import annotations
 
 import datetime as dt
+import json
 import os
 import pathlib
-import shlex
+import re
 import subprocess
 
 LOG_PATH = pathlib.Path(__file__).resolve().parents[1] / "audit" / "access.log"
+
+# Values matching this pattern are safe to write bare (no quoting). Anything
+# else gets json-serialized so log parsers see well-formed strings.
+_BARE_VALUE = re.compile(r"^[A-Za-z0-9._@:/+-]+$")
 
 
 def _resolve_actor() -> str:
@@ -39,7 +44,9 @@ def _resolve_actor() -> str:
 
 def _format_value(value: object) -> str:
     s = str(value)
-    return shlex.quote(s) if any(c.isspace() for c in s) else s
+    if s and _BARE_VALUE.fullmatch(s):
+        return s
+    return json.dumps(s)
 
 
 def write(action: str, status: str = "ok", **fields: object) -> None:

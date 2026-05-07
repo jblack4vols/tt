@@ -8,7 +8,9 @@ Refuses to write any payload that contains row-level patient data.
 from __future__ import annotations
 
 import argparse
+import calendar
 import concurrent.futures
+import datetime as dt
 import json
 import os
 import pathlib
@@ -108,20 +110,17 @@ def _resolve_window(args: argparse.Namespace) -> tuple[str, str, str]:
         return args.start, args.end, args.week or args.start
     if args.week:
         year_str, week_str = args.week.split("-")
-        import datetime as dt
         year, week = int(year_str), int(week_str)
         monday = dt.date.fromisocalendar(year, week, 1)
         sunday = dt.date.fromisocalendar(year, week, 7)
         return monday.isoformat(), sunday.isoformat(), args.week
     if args.weeks:
-        import datetime as dt
         today = dt.date.today()
-        end = today - dt.timedelta(days=today.weekday() + 1)
+        days_since_sunday = today.isoweekday() % 7
+        end = today - dt.timedelta(days=days_since_sunday)
         start = end - dt.timedelta(weeks=args.weeks - 1, days=6)
         return start.isoformat(), end.isoformat(), f"rolling-{args.weeks}w"
     if args.month:
-        import calendar
-        import datetime as dt
         year, month = (int(x) for x in args.month.split("-"))
         last_day = calendar.monthrange(year, month)[1]
         return (
@@ -157,7 +156,13 @@ def main(argv: list[str]) -> int:
         (cache_dir / f"{clinic}.json").write_text(json.dumps(payload, indent=2))
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-        list(pool.map(fetch_and_persist, CLINICS))
+        futures = {pool.submit(fetch_and_persist, c): c for c in CLINICS}
+        for future in concurrent.futures.as_completed(futures):
+            clinic = futures[future]
+            try:
+                future.result()
+            except Exception as exc:
+                errors.append((clinic, str(exc)))
 
     if errors:
         for clinic, reason in errors:

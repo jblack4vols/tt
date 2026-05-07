@@ -28,9 +28,22 @@ Replace the manual Monday-morning spreadsheet that pulls per-clinic productivity
 ## Audit
 Every EMR fetch emits a structured line to `audit/access.log` via `scripts/audit.py`.
 The audit write happens in code, not in the command prompt — it cannot be
-silently skipped. See `audit/sample_audit.log` for the format. Set
-`CLINIC_OPS_ACTOR=user@company.com` to override the actor (defaults to
-`git config user.email`, then `unknown`).
+silently skipped. See `audit/sample_audit.log` for the format.
+
+### Actor resolution
+Audit lines record the actor in this order of preference:
+1. `CLINIC_OPS_ACTOR` env var
+2. `git config user.email`
+3. `unknown`
+
+**Production deployments must set `CLINIC_OPS_ACTOR`** in the wrapper that
+launches the rollup (cron, systemd unit, GitHub Actions workflow, etc.) —
+otherwise audits attribute every action to whichever service-account email
+happens to be configured for git on that host. Example:
+
+```bash
+CLINIC_OPS_ACTOR=clinic-ops@company.com python scripts/fetch_emr_report.py --week 2026-18
+```
 
 ## Window flags
 `fetch_emr_report.py` accepts any of:
