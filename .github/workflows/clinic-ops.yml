@@ -1,0 +1,27 @@
+name: clinic-ops tests
+
+on:
+  pull_request:
+    paths:
+      - "plugins/clinic-ops/**"
+      - ".github/workflows/clinic-ops.yml"
+  push:
+    branches: [main]
+    paths:
+      - "plugins/clinic-ops/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugins/clinic-ops
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        env:
+          CLINIC_OPS_ENV: dev
+        run: python -m unittest tests.test_units tests.test_compute_kpis -v

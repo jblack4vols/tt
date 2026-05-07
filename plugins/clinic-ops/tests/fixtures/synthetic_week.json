@@ -1,0 +1,77 @@
+{
+  "week": "2026-18",
+  "clinics": {
+    "C01": {
+      "clinic_code": "C01",
+      "scheduled_appointments": 420, "completed_appointments": 378,
+      "cancellations": 22, "same_day_cancellations": 11, "no_shows": 20,
+      "evals": 38, "new_patients": 36, "units_billed": 1490,
+      "fte_total": 4.0, "gross_charges": 78400, "expected_reimbursement": 41200,
+      "payer_mix": {"Medicare": 0.34, "BCBS": 0.22, "Aetna": 0.14, "UHC": 0.12, "Workers Comp": 0.08, "Self Pay": 0.10},
+      "therapists": [{"id": "T101", "fte": 1.0}, {"id": "T102", "fte": 1.0}, {"id": "T103", "fte": 1.0}, {"id": "T104", "fte": 1.0}]
+    },
+    "C02": {
+      "clinic_code": "C02",
+      "scheduled_appointments": 365, "completed_appointments": 322,
+      "cancellations": 25, "same_day_cancellations": 14, "no_shows": 18,
+      "evals": 30, "new_patients": 28, "units_billed": 1240,
+      "fte_total": 3.5, "gross_charges": 64200, "expected_reimbursement": 33800,
+      "payer_mix": {"Medicare": 0.40, "BCBS": 0.20, "Cigna": 0.15, "UHC": 0.10, "Workers Comp": 0.07, "Self Pay": 0.08},
+      "therapists": [{"id": "T201", "fte": 1.0}, {"id": "T202", "fte": 1.0}, {"id": "T203", "fte": 1.0}, {"id": "T204", "fte": 0.5}]
+    },
+    "C03": {
+      "clinic_code": "C03",
+      "scheduled_appointments": 510, "completed_appointments": 471,
+      "cancellations": 21, "same_day_cancellations": 9, "no_shows": 18,
+      "evals": 44, "new_patients": 41, "units_billed": 1900,
+      "fte_total": 4.5, "gross_charges": 96400, "expected_reimbursement": 51800,
+      "payer_mix": {"Medicare": 0.30, "BCBS": 0.25, "Aetna": 0.18, "UHC": 0.12, "Workers Comp": 0.07, "Self Pay": 0.08},
+      "therapists": [{"id": "T301", "fte": 1.0}, {"id": "T302", "fte": 1.0}, {"id": "T303", "fte": 1.0}, {"id": "T304", "fte": 1.0}, {"id": "T305", "fte": 0.5}]
+    },
+    "C04": {
+      "clinic_code": "C04",
+      "scheduled_appointments": 280, "completed_appointments": 232,
+      "cancellations": 24, "same_day_cancellations": 16, "no_shows": 24,
+      "evals": 22, "new_patients": 21, "units_billed": 880,
+      "fte_total": 3.0, "gross_charges": 47600, "expected_reimbursement": 24300,
+      "payer_mix": {"Medicare": 0.45, "BCBS": 0.18, "Cigna": 0.12, "UHC": 0.12, "Workers Comp": 0.05, "Self Pay": 0.08},
+      "therapists": [{"id": "T401", "fte": 1.0}, {"id": "T402", "fte": 1.0}, {"id": "T403", "fte": 1.0}]
+    },
+    "C05": {
+      "clinic_code": "C05",
+      "scheduled_appointments": 395, "completed_appointments": 351,
+      "cancellations": 24, "same_day_cancellations": 12, "no_shows": 20,
+      "evals": 33, "new_patients": 31, "units_billed": 1370,
+      "fte_total": 3.75, "gross_charges": 72100, "expected_reimbursement": 38400,
+      "payer_mix": {"Medicare": 0.32, "BCBS": 0.24, "Aetna": 0.16, "UHC": 0.12, "Workers Comp": 0.08, "Self Pay": 0.08},
+      "therapists": [{"id": "T501", "fte": 1.0}, {"id": "T502", "fte": 1.0}, {"id": "T503", "fte": 1.0}, {"id": "T504", "fte": 0.75}]
+    },
+    "C06": {
+      "clinic_code": "C06",
+      "scheduled_appointments": 305, "completed_appointments": 268,
+      "cancellations": 19, "same_day_cancellations": 8, "no_shows": 18,
+      "evals": 25, "new_patients": 23, "units_billed": 1010,
+      "fte_total": 3.0, "gross_charges": 54600, "expected_reimbursement": 28900,
+      "payer_mix": {"Medicare": 0.36, "BCBS": 0.22, "Cigna": 0.14, "UHC": 0.12, "Workers Comp": 0.08, "Self Pay": 0.08},
+      "therapists": [{"id": "T601", "fte": 1.0}, {"id": "T602", "fte": 1.0}, {"id": "T603", "fte": 1.0}]
+    },
+    "C07": {
+      "clinic_code": "C07",
+      "scheduled_appointments": 460, "completed_appointments": 414,
+      "cancellations": 22, "same_day_cancellations": 10, "no_shows": 24,
+      "evals": 39, "new_patients": 36, "units_billed": 1660,
+      "fte_total": 4.0, "gross_charges": 84500, "expected_reimbursement": 45100,
+      "payer_mix": {"Medicare": 0.31, "BCBS": 0.24, "Aetna": 0.17, "UHC": 0.12, "Workers Comp": 0.08, "Self Pay": 0.08},
+      "therapists": [{"id": "T701", "fte": 1.0}, {"id": "T702", "fte": 1.0}, {"id": "T703", "fte": 1.0}, {"id": "T704", "fte": 1.0}]
+    },
+    "C08": {
+      "clinic_code": "C08",
+      "scheduled_appointments": 240, "completed_appointments": 198,
+      "cancellations": 22, "same_day_cancellations": 14, "no_shows": 20,
+      "evals": 19, "new_patients": 18, "units_billed": 760,
+      "fte_total": 2.5, "gross_charges": 41200, "expected_reimbursement": 21300,
+      "payer_mix": {"Medicare": 0.42, "BCBS": 0.18, "Cigna": 0.14, "UHC": 0.12, "Workers Comp": 0.06, "Self Pay": 0.08},
+      "therapists": [{"id": "T801", "fte": 1.0}, {"id": "T802", "fte": 1.0}, {"id": "T803", "fte": 0.5}]
+    }
+  }
+}
