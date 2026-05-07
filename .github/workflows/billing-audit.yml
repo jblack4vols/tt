@@ -1,0 +1,27 @@
+name: billing-audit tests
+
+on:
+  pull_request:
+    paths:
+      - "plugins/billing-audit/**"
+      - ".github/workflows/billing-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "plugins/billing-audit/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugins/billing-audit
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        env:
+          BILLING_AUDIT_ENV: dev
+        run: python -m unittest tests.test_billing_audit -v

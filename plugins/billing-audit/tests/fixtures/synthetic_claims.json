@@ -1,0 +1,79 @@
+{
+  "label": "synthetic-batch-001",
+  "claims": [
+    {
+      "claim_id": "CLM-0001",
+      "patient_id": "P-101",
+      "visit_date": "2026-04-28",
+      "payer_category": "medicare",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-04-15", "signature_date": "2026-04-22"},
+      "timed_lines": [
+        {"cpt": "97110", "documented_minutes": 30, "units": 2},
+        {"cpt": "97140", "documented_minutes": 15, "units": 1}
+      ],
+      "untimed_lines": [{"cpt": "97010", "units": 1}]
+    },
+    {
+      "claim_id": "CLM-0002",
+      "patient_id": "P-102",
+      "visit_date": "2026-04-28",
+      "payer_category": "commercial",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-04-10", "signature_date": null},
+      "timed_lines": [
+        {"cpt": "97110", "documented_minutes": 22, "units": 2},
+        {"cpt": "97530", "documented_minutes": 5, "units": 1}
+      ],
+      "untimed_lines": []
+    },
+    {
+      "claim_id": "CLM-0003",
+      "patient_id": "P-103",
+      "visit_date": "2026-04-29",
+      "payer_category": "wc",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-04-20", "signature_date": "2026-04-26"},
+      "timed_lines": [
+        {"cpt": "97110", "documented_minutes": 20, "units": 5}
+      ],
+      "untimed_lines": []
+    },
+    {
+      "claim_id": "CLM-0004",
+      "patient_id": "P-104",
+      "visit_date": "2026-04-29",
+      "payer_category": "medicare",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-03-15", "signature_date": null},
+      "timed_lines": [
+        {"cpt": "97110", "documented_minutes": 45, "units": 4}
+      ],
+      "untimed_lines": []
+    },
+    {
+      "claim_id": "CLM-0005",
+      "patient_id": "P-105",
+      "visit_date": "2026-04-30",
+      "payer_category": "medicare",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-04-25", "signature_date": "2026-04-28"},
+      "timed_lines": [
+        {"cpt": "97110", "documented_minutes": 38, "units": 3}
+      ],
+      "untimed_lines": [{"cpt": "97161", "units": 1}]
+    },
+    {
+      "claim_id": "CLM-0006",
+      "patient_id": "P-106",
+      "visit_date": "2026-04-30",
+      "payer_category": "commercial",
+      "apply_8min_rule": true,
+      "plan_of_care": {"eval_date": "2026-03-01", "signature_date": "2026-04-15"},
+      "timed_lines": [
+        {"cpt": "97140", "documented_minutes": 15, "units": 1}
+      ],
+      "untimed_lines": []
+    }
+  ]
+}

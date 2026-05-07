@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment": "Company-wide managed settings for Claude Code. Deploy to /Library/Application Support/ClaudeCode/managed-settings.json (macOS) or %ProgramData%\\ClaudeCode\\managed-settings.json (Windows) via MDM. Workforce members cannot override these locally.",
+
+  "extraKnownMarketplaces": {
+    "[company-name]-internal": {
+      "source": {
+        "type": "github",
+        "repo": "[org-name]/tt"
+      }
+    }
+  },
+
+  "enabledMarketplaces": [
+    "anthropic",
+    "[company-name]-internal"
+  ],
+
+  "enabledPlugins": {
+    "[company-name]-internal/clinic-ops": "0.1.0",
+    "[company-name]-internal/billing-audit": "0.1.0"
+  },
+
+  "permissions": {
+    "deny": [
+      "Bash(curl https://*)",
+      "Bash(curl http://*)",
+      "Bash(wget *)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~/*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.ssh/*)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(git push --force *)",
+      "Write(./policies/**)",
+      "Write(./.claude-plugin/**)",
+      "Write(./.github/CODEOWNERS)"
+    ]
+  },
+
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otel.[company-name].internal:4317",
+    "OTEL_EXPORTER_OTLP_HEADERS": "x-company-tenant=[company-name]",
+    "OTEL_RESOURCE_ATTRIBUTES": "deployment.environment=production,service.namespace=[company-name]",
+
+    "_comment_baa": "Set ANTHROPIC_BAA_SIGNED=true ONLY after the BAA is countersigned and on file with the Privacy Officer. Toggling this enables billing-audit and any other plugin gated on real PHI.",
+    "ANTHROPIC_BAA_SIGNED": "false",
+
+    "_comment_actor": "Set per-user via MDM-injected user-scoped env so audit attribution is correct. Falls back to git user.email if unset.",
+    "CLINIC_OPS_ACTOR": "$USER@[company-name].com",
+    "BILLING_AUDIT_ACTOR": "$USER@[company-name].com"
+  },
+
+  "model": "claude-opus-4-7",
+
+  "_audit_note": "All Claude Code activity is exported via OpenTelemetry to the SIEM. Logs retained 6 years per HIPAA Security Rule §164.316(b)(2)(i)."
+}
