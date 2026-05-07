@@ -1,0 +1,17 @@
+{
+  "name": "clinic-ops",
+  "version": "0.1.0",
+  "description": "Operational KPI rollups across all 8 clinics.",
+  "author": "[Company Name] Engineering",
+  "commands": [
+    "commands/weekly-kpi-rollup.md",
+    "commands/therapist-productivity.md",
+    "commands/cancellation-report.md",
+    "commands/referral-source-summary.md"
+  ],
+  "skills": ["skills/kpi-definitions"],
+  "permissions": {
+    "bash": ["python scripts/*"],
+    "network": ["api.[your-emr-vendor].com"]
+  }
+}

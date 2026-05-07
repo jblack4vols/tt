@@ -1,0 +1,4 @@
+2026-05-04T08:02:14Z actor=jane.doe@company.com action=weekly-rollup week=2026-18 clinics=8 status=ok
+2026-05-04T08:14:01Z actor=jane.doe@company.com action=therapist-productivity scope=all week=2026-18 status=ok
+2026-05-04T09:22:45Z actor=ops.bot@company.com action=cancellation-report scope=all weeks=4 status=ok
+2026-05-05T10:11:33Z actor=jane.doe@company.com action=referral-source-summary month=2026-04 status=ok
