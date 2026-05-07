@@ -20,8 +20,12 @@ def resolve(week_arg: str | None) -> dict:
         year, week = int(year_str), int(week_str)
     else:
         today = dt.date.today()
-        last_completed = today - dt.timedelta(days=today.weekday() + 1)
-        iso = last_completed.isocalendar()
+        # ISO weekday: Mon=1..Sun=7. The most recently *completed* ISO week
+        # ended on the most recent Sunday. On Sunday itself, today's week
+        # has just completed — use it.
+        days_since_sunday = today.isoweekday() % 7
+        last_sunday = today - dt.timedelta(days=days_since_sunday)
+        iso = last_sunday.isocalendar()
         year, week = iso.year, iso.week
 
     monday = dt.date.fromisocalendar(year, week, 1)

@@ -26,7 +26,20 @@ Replace the manual Monday-morning spreadsheet that pulls per-clinic productivity
 - All tests run against synthetic data. Real PHI is never used in development.
 
 ## Audit
-Every command emits an entry to `audit/access.log`. See `audit/sample_audit.log` for format.
+Every EMR fetch emits a structured line to `audit/access.log` via `scripts/audit.py`.
+The audit write happens in code, not in the command prompt — it cannot be
+silently skipped. See `audit/sample_audit.log` for the format. Set
+`CLINIC_OPS_ACTOR=user@company.com` to override the actor (defaults to
+`git config user.email`, then `unknown`).
+
+## Window flags
+`fetch_emr_report.py` accepts any of:
+- `--start YYYY-MM-DD --end YYYY-MM-DD` — explicit range
+- `--week YYYY-WW` — single ISO week
+- `--weeks N` — rolling N weeks ending on the most recent Sunday
+- `--month YYYY-MM` — calendar month
+- `--include <section>` (repeatable) — extra report sections (`therapists`,
+  `schedule_events`, `referrals`)
 
 ## Security
 See `THREAT-MODEL.md` and the company Plugin Development Standard.
