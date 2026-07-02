@@ -1,10 +1,12 @@
 # Default reviewers for the billing-audit plugin
 # All paths require both engineering AND privacy officer review because the
 # plugin is PHI-adjacent — even small changes can shift the audit shape.
-*                              @[engineering-lead] @[privacy-officer]
+# (Engineering lead, privacy officer, and security officer all currently
+# resolve to the same person, @jblack4vols.)
+*                              @jblack4vols
 
 # Anything that affects the production gating, threat surface, or audit
 # format requires a security officer in addition.
-THREAT-MODEL.md                @[engineering-lead] @[privacy-officer] @[security-officer]
-scripts/fetch_claims.py        @[engineering-lead] @[privacy-officer] @[security-officer]
-audit/                         @[engineering-lead] @[privacy-officer] @[security-officer]
+THREAT-MODEL.md                @jblack4vols
+scripts/fetch_claims.py        @jblack4vols
+audit/                         @jblack4vols

@@ -1,7 +1,9 @@
 # Default reviewers for the clinic-ops plugin
-*           @[engineering-lead]
+# (Engineering lead and privacy officer currently resolve to the same
+# person, @jblack4vols.)
+*           @jblack4vols
 
 # Privacy Officer review required for anything that touches data fetching or audit
-scripts/fetch_emr_report.py    @[engineering-lead] @[privacy-officer]
-THREAT-MODEL.md                @[engineering-lead] @[privacy-officer]
-audit/                         @[engineering-lead] @[privacy-officer]
+scripts/fetch_emr_report.py    @jblack4vols
+THREAT-MODEL.md                @jblack4vols
+audit/                         @jblack4vols

@@ -1,6 +1,6 @@
-# [Company Name] internal Claude Code marketplace
+# TriStar PT internal Claude Code marketplace
 
-This repository is the private Claude Code plugin marketplace for [Company Name],
+This repository is the private Claude Code plugin marketplace for TriStar PT,
 an 8-location outpatient physical therapy group operating as a HIPAA covered
 entity.
 
@@ -30,10 +30,10 @@ Once published, workforce members add the marketplace via managed
 ```jsonc
 {
   "extraKnownMarketplaces": {
-    "[company-name]-internal": {
+    "tristarpt-internal": {
       "source": {
         "type": "github",
-        "repo": "[org-name]/tt"
+        "repo": "jblack4vols/tt"
       }
     }
   }
@@ -53,15 +53,18 @@ allowlist to the official Anthropic marketplace and this one. See the
 - The marketplace itself is reviewed monthly by IT for installed plugin
   inventory and audit-log integrity.
 
-## Filling in placeholders
+## Placeholder status
 
-Before this repo goes live, replace every bracketed token:
-- `[Company Name]` — the legal name of the practice
-- `[company-name]` — slugified name used in identifiers
-- `[org-name]` — the GitHub organization slug
-- `[engineering-lead]` / `[privacy-officer]` — real GitHub usernames
-- `[engineering@company.com]` — a monitored mailbox
+Company, org, and role identifiers have been substituted repo-wide:
+- `[Company Name]` → TriStar PT
+- `[company-name]` → tristarpt
+- `[org-name]` → jblack4vols (a personal GitHub account, not a dedicated
+  org — there is no separate company org yet)
+- `[engineering-lead]` / `[privacy-officer]` / `[security-officer]` →
+  jblack4vols (one person currently holds all three roles)
+- `[engineering@company.com]` / `[security@company.com]` → jblack@tristarpt.com
 
-Search-and-replace targets: `MARKETPLACE.md`, `CONTRIBUTING.md`,
-`.claude-plugin/marketplace.json`, `.github/CODEOWNERS`, every file under
-`policies/`, and every plugin's `README.md`, `CODEOWNERS`, and `plugin.json`.
+Still pending: `api.[your-emr-vendor].com` (EMR vendor hostname), blocked on
+vendor selection — see `ROLLOUT.md` Track 5. Policy effective dates and
+formal role sign-off (as opposed to the GitHub-username stand-ins above) are
+tracked separately in `ROLLOUT.md` Tracks 1–2.

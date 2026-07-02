@@ -1,6 +1,6 @@
 # clinic-ops
 
-Internal Claude Code plugin that produces operational KPI rollups across all 8 [Company Name] outpatient PT clinics.
+Internal Claude Code plugin that produces operational KPI rollups across all 8 TriStar PT outpatient PT clinics.
 
 ## Purpose
 Replace the manual Monday-morning spreadsheet that pulls per-clinic productivity, revenue, and visit-volume metrics from the EMR reporting API into a single email/Slack-ready report for ownership.

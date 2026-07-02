@@ -1,4 +1,4 @@
-# Contributing to the [Company Name] internal marketplace
+# Contributing to the TriStar PT internal marketplace
 
 Read this **before** opening a PR that adds or modifies a plugin. The
 controls here are how this marketplace stays HIPAA-defensible.
@@ -88,5 +88,5 @@ approval and a documented business need — see the Plugin Development Standard.
 
 ## Reporting security issues
 
-Do **not** open a public issue. Email [security@company.com]. See the
+Do **not** open a public issue. Email jblack@tristarpt.com. See the
 Incident Response Addendum for the full procedure.

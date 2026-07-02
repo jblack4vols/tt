@@ -1,22 +1,23 @@
-# Top-level CODEOWNERS for the [Company Name] internal marketplace.
+# Top-level CODEOWNERS for the TriStar PT internal marketplace.
 # Per-plugin ownership is defined in plugins/<name>/CODEOWNERS.
 #
-# Replace the bracketed placeholders with real GitHub usernames before this
-# repo enforces protection.
+# Engineering lead, privacy officer, and security officer all currently
+# resolve to the same person (@jblack4vols). Split these out to distinct
+# usernames once the roles are staffed separately.
 
 # Default: every PR needs the engineering lead.
-*                                   @[engineering-lead]
+*                                   @jblack4vols
 
 # Marketplace manifest controls which plugins workforce members can install.
 # Must be reviewed by both engineering and the privacy officer.
-/.claude-plugin/marketplace.json    @[engineering-lead] @[privacy-officer]
+/.claude-plugin/marketplace.json    @jblack4vols
 
 # HIPAA policies — any change requires the privacy officer and a security
 # officer review.
-/policies/                          @[privacy-officer] @[security-officer]
+/policies/                          @jblack4vols
 
 # Contributing guide and CODEOWNERS itself: engineering lead + privacy
 # officer (because changes here can weaken review controls).
-/CONTRIBUTING.md                    @[engineering-lead] @[privacy-officer]
-/.github/CODEOWNERS                 @[engineering-lead] @[privacy-officer]
-/.github/workflows/                 @[engineering-lead]
+/CONTRIBUTING.md                    @jblack4vols
+/.github/CODEOWNERS                 @jblack4vols
+/.github/workflows/                 @jblack4vols

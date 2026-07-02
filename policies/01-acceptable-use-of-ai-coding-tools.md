@@ -3,10 +3,10 @@
 **Policy owner:** [Privacy Officer / Security Officer]
 **Effective date:** [Date]
 **Review cadence:** Annual
-**Applies to:** All workforce members, contractors, and business associates with access to [Company Name] systems.
+**Applies to:** All workforce members, contractors, and business associates with access to TriStar PT systems.
 
 ## 1. Purpose
-Define how AI-assisted coding tools (Claude Code, Claude.ai, GitHub Copilot, ChatGPT, Cursor, and similar) may be used at [Company Name], a HIPAA-covered entity operating outpatient physical therapy clinics.
+Define how AI-assisted coding tools (Claude Code, Claude.ai, GitHub Copilot, ChatGPT, Cursor, and similar) may be used at TriStar PT, a HIPAA-covered entity operating outpatient physical therapy clinics.
 
 ## 2. Approved tools
 The following tools are approved for use, subject to the conditions in §3:
@@ -38,10 +38,10 @@ The following tools are approved for use, subject to the conditions in §3:
 - Bypassing managed settings, EDR, or other endpoint controls.
 
 ## 6. Incident reporting
-Any suspected unauthorized disclosure, misconfiguration, or AI-related security event must be reported to [security@company.com] within 1 hour of discovery. See the Incident Response Addendum for procedure.
+Any suspected unauthorized disclosure, misconfiguration, or AI-related security event must be reported to jblack@tristarpt.com within 1 hour of discovery. See the Incident Response Addendum for procedure.
 
 ## 7. Sanctions
-Violations are subject to [Company Name]'s standard HIPAA sanctions policy, up to and including termination.
+Violations are subject to TriStar PT's standard HIPAA sanctions policy, up to and including termination.
 
 ## 8. Acknowledgment
 All workforce members with access to AI coding tools must sign an acknowledgment annually.

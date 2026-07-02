@@ -1,9 +1,9 @@
 ---
 name: billing-rules
-description: Canonical billing rule reference for [Company Name] outpatient PT — Medicare 8-minute rule, plan-of-care signature requirements, modifier 59 guidance, common CARC denial codes. Loaded when any billing-audit command runs.
+description: Canonical billing rule reference for TriStar PT outpatient PT — Medicare 8-minute rule, plan-of-care signature requirements, modifier 59 guidance, common CARC denial codes. Loaded when any billing-audit command runs.
 ---
 
-# [Company Name] Billing Rules
+# TriStar PT Billing Rules
 
 Source of truth for what counts as a flag. If a script computes anything
 that contradicts this file, the file is right and the script is wrong.

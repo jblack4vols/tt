@@ -2,7 +2,7 @@
   "name": "clinic-ops",
   "version": "0.1.0",
   "description": "Operational KPI rollups across all 8 clinics.",
-  "author": "[Company Name] Engineering",
+  "author": "TriStar PT Engineering",
   "commands": [
     "commands/weekly-kpi-rollup.md",
     "commands/therapist-productivity.md",

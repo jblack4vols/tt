@@ -1,7 +1,7 @@
 # Anthropic BAA request — email draft
 
 Send to: **sales@anthropic.com**
-Subject: **BAA request — [Company Name] (HIPAA covered entity, outpatient PT)**
+Subject: **BAA request — TriStar PT (HIPAA covered entity, outpatient PT)**
 
 Optional CC: your account executive if you have one assigned.
 
@@ -11,7 +11,7 @@ Optional CC: your account executive if you have one assigned.
 
 > Hi Anthropic team,
 >
-> I'm [Your Name], [your title] at [Company Name], an outpatient physical
+> I'm [Your Name], [your title] at TriStar PT, an outpatient physical
 > therapy group operating eight clinics across [state(s)]. We're a HIPAA
 > covered entity and would like to start the Business Associate Agreement
 > process so we can use Claude on protected health information.
@@ -60,7 +60,7 @@ Optional CC: your account executive if you have one assigned.
 >
 > [Your Name]
 > [Your title]
-> [Company Name]
+> TriStar PT
 > [Phone]
 
 ---
@@ -70,7 +70,6 @@ Optional CC: your account executive if you have one assigned.
 Replace before sending:
 
 - [ ] `[Your Name]`, `[your title]`
-- [ ] `[Company Name]`
 - [ ] `[state(s)]` — primary operating state(s)
 - [ ] `[N]` — Claude Code seat count
 - [ ] `[M]` — Claude.ai seat count
