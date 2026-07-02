@@ -2,13 +2,13 @@
 
 **Policy owner:** [Engineering Lead / IT Director]
 **Effective date:** [Date]
-**Applies to:** All employees and contractors developing software for [Company Name].
+**Applies to:** All employees and contractors developing software for TriStar PT.
 
 ## 1. Scope
 This standard governs internal Claude Code plugins, custom skills, MCP servers, and any code that integrates with EMR, billing, scheduling, or PHI-adjacent systems.
 
 ## 2. Repository and branch controls
-- All internal plugins live in the private GitHub organization `[org-name]`.
+- All internal plugins live under the private GitHub account `jblack4vols` (no dedicated company org exists yet).
 - The `main` branch is protected: required PR review, required status checks, signed commits, no force-push, no direct commits.
 - A second reviewer is required for any change in the categories `billing/`, `emr/`, or `phi/`.
 
@@ -38,7 +38,7 @@ Every plugin must include:
 - [ ] If a new slash command: documented in plugin README
 
 ## 6. Marketplace controls
-- Only the official Anthropic marketplace and `[org-name]/internal-marketplace` are permitted via managed `settings.json`.
+- Only the official Anthropic marketplace and `jblack4vols/tt` are permitted via managed `settings.json`.
 - Plugin versions are pinned per environment (dev/stage/prod).
 - A monthly review of installed plugins is logged by IT.
 

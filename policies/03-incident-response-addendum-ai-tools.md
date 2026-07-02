@@ -1,7 +1,7 @@
 # Incident Response Addendum — AI Tools
 
 **Policy owner:** [Security Officer]
-**Companion to:** [Company Name] HIPAA Incident Response Plan
+**Companion to:** TriStar PT HIPAA Incident Response Plan
 **Effective date:** [Date]
 
 ## 1. Triggering events

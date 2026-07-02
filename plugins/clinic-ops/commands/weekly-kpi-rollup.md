@@ -6,7 +6,7 @@ allowed-tools: Bash(python scripts/*), Read, Write
 
 # Weekly KPI rollup
 
-You are generating the Monday-morning operational report for [Company Name].
+You are generating the Monday-morning operational report for TriStar PT.
 Follow these steps in order. Do not skip steps. Do not infer numbers — every
 metric must come from a script output, never from memory.
 

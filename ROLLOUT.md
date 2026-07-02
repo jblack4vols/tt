@@ -51,31 +51,34 @@ The repo ships with bracketed tokens by design. Until these are real, the
 marketplace install snippet won't resolve, CODEOWNERS won't enforce, and
 audit attribution will read `unknown`.
 
-### Tokens to replace
-- `[Company Name]` — legal practice name
-- `[company-name]` — slugified version (used in marketplace name, OTel attrs)
-- `[org-name]` — GitHub organization slug
-- `[your-emr-vendor]` — EMR vendor's API hostname (after Track 5)
-- `[engineering-lead]`, `[privacy-officer]`, `[security-officer]` — real GitHub usernames
-- `[engineering@company.com]`, `[security@company.com]` — monitored mailboxes
-- `[Date]`, `[YYYY-MM-DD]` — actual dates in policies and skill files
-- `$USER@[company-name].com` — verify your MDM's user-scoped substitution
+### Status
 
-### Files affected
-- `MARKETPLACE.md`, `CONTRIBUTING.md`
-- `.claude-plugin/marketplace.json`
-- `.github/CODEOWNERS`, `.github/pull_request_template.md`
-- All `policies/*.md`
-- `config/managed-settings.json`, `config/README.md`
-- `templates/anthropic-baa-email.md`
-- Each plugin's `README.md`, `THREAT-MODEL.md`, `CODEOWNERS`, `plugin.json`,
-  and `skills/*/SKILL.md`
+Company, org, role, and contact tokens have been substituted repo-wide:
+- `[Company Name]` → TriStar PT
+- `[company-name]` → tristarpt
+- `[org-name]` → jblack4vols (personal GitHub account; no dedicated company
+  org exists yet)
+- `[engineering-lead]`, `[privacy-officer]`, `[security-officer]` →
+  jblack4vols (one person currently holds all three roles)
+- `[engineering@company.com]`, `[security@company.com]` → jblack@tristarpt.com
+- `$USER@[company-name].com` → `$USER@tristarpt.com` in `config/managed-settings.json`
+
+### Still open
+- `[your-emr-vendor]` — EMR vendor's API hostname, blocked on Track 5
+  (vendor not yet selected). Intentionally left as a placeholder in
+  `plugins/*/plugin.json`, `plugins/*/README.md`, `plugins/*/THREAT-MODEL.md`,
+  and the two `fetch_*.py` scripts.
+- `[Date]`, `[YYYY-MM-DD]` — actual dates in policies, once each is formally
+  reviewed and made effective (Track 2).
+- Policy-owner role assignments (e.g. `[Privacy Officer / Security Officer]`
+  in `policies/01-...md`) — these name a formal role of record, which is a
+  separate decision from the GitHub-username stand-ins above.
 
 | # | Task | Owner | Target | Done |
 |---|------|-------|--------|:----:|
-| 3.1 | Find/replace pass; verify no `[bracket]` tokens remain (`grep -RnE '\[[a-z][a-z-]+\]' .`). | [Engineering Lead] | Week 1 | ☐ |
-| 3.2 | Validate `.claude-plugin/marketplace.json` parses and matches current Claude Code schema. | [Engineering Lead] | Week 1 | ☐ |
-| 3.3 | Verify all referenced GitHub usernames exist (`gh api users/<name>`). | [Engineering Lead] | Week 1 | ☐ |
+| 3.1 | Find/replace pass; verify no `[bracket]` tokens remain (`grep -RnE '\[[a-z][a-z-]+\]' .`) except `[your-emr-vendor]`. | [Engineering Lead] | Week 1 | ☑ |
+| 3.2 | Validate `.claude-plugin/marketplace.json` parses and matches current Claude Code schema. | [Engineering Lead] | Week 1 | ☑ |
+| 3.3 | Verify all referenced GitHub usernames exist (`gh api users/<name>`). | [Engineering Lead] | Week 1 | ☑ |
 
 ---
 
@@ -118,7 +121,7 @@ the real reporting API is wired, neither runs against real data.
 | # | Task | Owner | Target | Done |
 |---|------|-------|--------|:----:|
 | 6.1 | Substitute placeholders in `config/managed-settings.json` (Track 3 must be done). | IT | Week 3 | ☐ |
-| 6.2 | Confirm OTel collector (`otel.[company-name].internal`) is running and receiving from a test workstation. | IT | Week 3 | ☐ |
+| 6.2 | Confirm OTel collector (`otel.tristarpt.internal`) is running and receiving from a test workstation. | IT | Week 3 | ☐ |
 | 6.3 | SIEM ingestion verified; logs retained 6 years per HIPAA Security Rule §164.316(b)(2)(i). | [Security Officer] | Week 3 | ☐ |
 | 6.4 | Deploy `managed-settings.json` to a single test workstation. Verify `claude config list --managed` shows the policy. | IT | Week 3 | ☐ |
 | 6.5 | On the test workstation, attempt to install a plugin from outside the allowlist; confirm it's blocked. | IT | Week 3 | ☐ |
@@ -194,7 +197,7 @@ Edit this section as you go. Keep it short.
 ```
 Track 1 (BAA):                 not started
 Track 2 (Legal review):        not started
-Track 3 (Placeholders):        not started
+Track 3 (Placeholders):        done except [your-emr-vendor] (blocked on Track 5) and effective dates
 Track 4 (Branch protection):   not started
 Track 5 (EMR wiring):          not started
 Track 6 (MDM rollout):         not started

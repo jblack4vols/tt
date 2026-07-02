@@ -1,9 +1,9 @@
 ---
 name: kpi-definitions
-description: Canonical KPI formulas for [Company Name] outpatient PT operations. Loaded automatically when any clinic-ops command computes metrics.
+description: Canonical KPI formulas for TriStar PT outpatient PT operations. Loaded automatically when any clinic-ops command computes metrics.
 ---
 
-# [Company Name] KPI Definitions
+# TriStar PT KPI Definitions
 
 This is the single source of truth. If a metric is computed anywhere — a
 dashboard, a board deck, a clinic manager's spreadsheet — it must match these
